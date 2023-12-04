@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+.background-enabled {
+  background: url(https://images.unsplash.com/photo-1643101809653-45c4121a3934?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTYzOTU0ODg&ixlib=rb-1.2.1&q=80); 
+
+  background-repeat: no-repeat; 
+  background-position: center; 
+  background-size: cover;
+  height: 100vh;
+}
+.container-fluid > .row {
+  margin : 15px 0px;
+}
+.graph {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 660px) {
+  .parentdiv {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .graph {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+}
+@media screen and (max-width:774px) {
+  .homethird, .homesecond {
+    margin-top: 16px;
+  }
+}
+@media screen and (max-width: 1132px) and (min-width: 774px) {
+  .homethird {
+    margin-top: 16px;
+  }
+}
+.analyticdiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+@media screen and (min-width: 345px) {
+  .analyticdiv {
+    display: flex;
+    flex-direction: row;
+  }
+}
+@media screen and (max-width: 450px) {
+  .resetfilter {
+    margin-top: 6px;
+  }
+  .griddiv {
+    margin-top: 6px;
+  }
+  .type {
+    margin-top: 6px;
+  }
+}
+@media screen and (max-width: 343px) {
+  .transbut {
+    margin-top: 6px;
+  }
+}
+.table {
+  margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+  caption-side: top
+}
+.chart-container {
+  width: 300px; /* İstediğiniz genişliği ayarlayın */
+  height: 300px; /* İstediğiniz yüksekliği ayarlayın */
+}
