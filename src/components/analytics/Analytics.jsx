@@ -4,9 +4,11 @@ import { Doughnut } from 'react-chartjs-2';
 import "chart.js/auto";
 import Header from '../header/Header'
 import Buttons from '../buttons/Buttons';
+import LinkButtons from '../buttons/LinkButtons';
 import ProgressBar from './ProgressBar';
 
 export default function Analytics() {
+  const [selectedView, setSelectedView] = useState('table');
   const transactions = useSelector((state) => state.transactions);
   const [totalTransactions, setTotalTransactions] = useState(0);
   const [totalIncomeCount, setTotalIncomeCount] = useState(0);
@@ -87,10 +89,15 @@ const chartTurnover = {
   ],
 };
 
+const handleViewChange = (view) => {
+  setSelectedView(view);
+}
+
   return (
     <div>
       <Header />
-      <Buttons />
+      <LinkButtons onViewChange={handleViewChange}/>
+      {/*<Buttons />*/}
       <div className="container-fluid ">
         <h2 className="text-center">Analytic Graphics</h2>
         <div className="row graph">
