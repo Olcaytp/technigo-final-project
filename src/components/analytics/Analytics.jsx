@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import { Doughnut } from 'react-chartjs-2';
 import "chart.js/auto";
 import Header from '../header/Header'
-import Buttons from '../buttons/Buttons';
 import LinkButtons from '../buttons/LinkButtons';
 import ProgressBar from './ProgressBar';
 
@@ -19,20 +18,20 @@ export default function Analytics() {
   const [totalExpense, setTotalExpense] = useState(0);
 
   useEffect(() => {
-    // Total Transactions adedini hesapla
+    // Total Transactions counts
     setTotalTransactions(transactions.length);
 
-    // Gelir işlemlerinin adedini hesapla
+    // Income counts
     const incomeCount = transactions.reduce((count, transaction) => {
       return transaction.type === 'income' ? count + 1 : count;
     }, 0);
 
-    //Gider işlemlerinin adedini hesapla
+    //Expense counts
     const expenseCount = transactions.reduce((count, transaction) => {
       return transaction.type === 'expense' ? count + 1 : count;
     }, 0);
 
-    // Gelir ve Gideri hesapla
+    // Income and Expenses amounts
     const income = transactions.reduce((total, transaction) => {
       return transaction.type === 'income' ? total + transaction.amount : total;
     }, 0);
