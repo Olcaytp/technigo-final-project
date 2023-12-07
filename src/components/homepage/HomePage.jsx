@@ -3,7 +3,6 @@ import { Line, Bar } from 'react-chartjs-2';
 import Header from '../header/Header'
 
 const HomePage = () => {
-  // Örnek grafik verileri
   const dummyChartData1 = {
     labels: ['Category 1', 'Category 2', 'Category 3'],
     datasets: [

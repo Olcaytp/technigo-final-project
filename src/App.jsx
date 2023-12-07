@@ -9,7 +9,7 @@ import Update from './components/update/Update'
 import HomePage from './components/homepage/HomePage'
 function App() {
   
-  const [isBackgroundEnabled, setBackgroundEnabled] = useState(true);
+  const [isBackgroundEnabled, setBackgroundEnabled] = useState(false);
 
   const toggleBackground = () => {
     setBackgroundEnabled(!isBackgroundEnabled);

@@ -66,7 +66,14 @@ export default function Analytics() {
     setExpenseByCategory(expenseByCategoryData);
   }, [transactions]);
 
-// Chart.js için veri yapısı
+  const formatCurrency = (value) => {
+    return new Intl.NumberFormat('tr-TR', {
+      style: 'currency',
+      currency: 'TRY',
+    }).format(value);
+  };
+
+// Chart.js data
 const chartDataIncome = {
   labels: ['Income', 'Expense'],
   datasets: [
@@ -111,11 +118,11 @@ const handleViewChange = (view) => {
                   <Doughnut data={chartDataIncome} />
                 </div>
                 <div className="card-body text-center">
-                  {/* Total Transactions adedini göster */}
+                  {/* Total Transactions counts*/}
                   <p className="card-text mt-3">
                     Total Transactions: {totalTransactions}
                   </p>
-                  {/* Gelir ve Gider bilgilerini göster */}
+                  {/* Income and expenses counts*/}
                   <p className="card-text">Income: {totalIncomeCount}</p>
                   <p className="card-text">Expense: {totalExpenseCount}</p>
                 </div>
@@ -130,13 +137,13 @@ const handleViewChange = (view) => {
                   <Doughnut data={chartTurnover} />
                 </div>
                 <div className="card-body mt-3 text-center">
-                  {/* Total Transactions adedini göster */}
+                  {/* Total Transactions Amount*/}
                   <p className="card-text">
-                    Total Transactions: {totalIncome + totalExpense}
+                    Total Transactions: {formatCurrency(totalIncome + totalExpense)}
                   </p>
-                  {/* Gelir ve Gider bilgilerini göster */}
-                  <p className="card-text">Income: {totalIncome}</p>
-                  <p className="card-text">Expense: {totalExpense}</p>
+                  {/* Income and expense amounts*/}
+                  <p className="card-text">Income: {formatCurrency(totalIncome)}</p>
+                  <p className="card-text">Expense: {formatCurrency(totalExpense)}</p>
                 </div>
               </div>
             </div>

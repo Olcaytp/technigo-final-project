@@ -31,7 +31,7 @@ function Update() {
             amount: uamount,
             date: udate
         }))
-        navigate('/')
+        navigate('/grid')
     }
   return (
     <div className="container-fluid">
