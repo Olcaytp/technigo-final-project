@@ -4,11 +4,15 @@ import Create from './components/create/Create'
 import Home from './Home'
 import Analytics from './components/analytics/Analytics'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Update from './components/update/Update'
 import HomePage from './components/homepage/HomePage'
+
+const NotFoundPage = () => {
+  return <Navigate to="/" />;
+};
+
 function App() {
-  
   const [isBackgroundEnabled, setBackgroundEnabled] = useState(false);
 
   const toggleBackground = () => {
@@ -37,6 +41,7 @@ function App() {
         <Route path="/update" element={<Update/>}></Route>
         <Route path="/analytics" element={<Analytics/>}></Route>
         <Route path="/edit/:id" element={<Update/>}></Route>
+        <Route path="*" element={<Navigate to="/" />}></Route>
       </Routes>
       </div>
     </BrowserRouter>
