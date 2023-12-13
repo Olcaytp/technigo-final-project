@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 .background-enabled {
-  background: url(https://images.unsplash.com/photo-1643101809653-45c4121a3934?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTYzOTU0ODg&ixlib=rb-1.2.1&q=80); 
-
+  background: #ffd3d3;
   background-repeat: no-repeat; 
   background-position: center; 
   background-size: cover;
-  height: 100vh;
+  min-height: 100vh;
 }
 .container-fluid > .row {
   margin : 15px 0px;

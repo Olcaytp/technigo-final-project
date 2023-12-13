@@ -269,6 +269,78 @@ export const transactionList = [
     "category": generateRandomCategory("income"),
     "actions": ["Edit", "Delete"]
   },
+  {
+    "id": 31,
+    "name": generateRandomName("Business", "income"),
+    "type": "income",
+    "amount": 900,
+    "date": "2022-01-06",
+    "category": generateRandomCategory("income"),
+    "actions": ["Edit", "Delete"]
+  },
+  {
+    "id": 32,
+    "name": generateRandomName("Transport"),
+    "type": "expense",
+    "amount": 1000,
+    "date": "2022-01-07",
+    "category": generateRandomCategory("expense"),
+    "actions": ["Edit", "Delete"]
+  },
+  {
+    "id": 33,
+    "name": generateRandomName("Entertainment"),
+    "type": "expense",
+    "amount": 1100,
+    "date": "2022-01-08",
+    "category": generateRandomCategory("expense"),
+    "actions": ["Edit", "Delete"]
+  },
+  {
+    "id": 34,
+    "name": generateRandomName("Education"),
+    "type": "expense",
+    "amount": 1200,
+    "date": "2022-01-09",
+    "category": generateRandomCategory("expense"),
+    "actions": ["Edit", "Delete"]
+  },
+  {
+    "id": 35,
+    "name": generateRandomName("Salary", "income"),
+    "type": "income",
+    "amount": 1300,
+    "date": "2022-01-10",
+    "category": generateRandomCategory("income"),
+    "actions": ["Edit", "Delete"]
+  },
+  {
+    "id": 36,
+    "name": generateRandomName("Freelance", "income"),
+    "type": "income",
+    "amount": 1400,
+    "date": "2022-01-11",
+    "category": generateRandomCategory("income"),
+    "actions": ["Edit", "Delete"]
+  },
+  {
+    "id": 37,
+    "name": generateRandomName("Transport"),
+    "type": "expense",
+    "amount": 1500,
+    "date": "2022-01-12",
+    "category": generateRandomCategory("expense"),
+    "actions": ["Edit", "Delete"]
+  },
+  {
+    "id": 38,
+    "name": generateRandomName("Food"),
+    "type": "expense",
+    "amount": 1600,
+    "date": "2022-01-13",
+    "category": generateRandomCategory("expense"),
+    "actions": ["Edit", "Delete"]
+  },
 ];
 
 function generateRandomCategory(type) {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { updateTransaction } from '../reducer/TransactionReducer';
+import { updateTransaction } from '../../reducer/TransactionReducer';
 import { Link, useNavigate } from 'react-router-dom';
 
 function Update() {

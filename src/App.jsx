@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css'
-import Create from './components/cretae/Create'
+import Create from './components/create/Create'
 import Home from './Home'
 import Analytics from './components/analytics/Analytics'
 import 'bootstrap/dist/css/bootstrap.min.css'

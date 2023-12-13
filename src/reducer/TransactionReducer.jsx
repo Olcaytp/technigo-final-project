@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { transactionList } from "../../Data";
+import { transactionList } from "../Data";
 
 
 const transactionSlice = createSlice({
@@ -7,8 +7,11 @@ const transactionSlice = createSlice({
     initialState: transactionList,
     reducers: {
         addTransaction: (state, action)=>{
-            console.log(action);
-            state.push(action.payload)
+            const lastId = state.length > 0 ? state[state.length - 1].id : 0;
+      const newId = lastId + 1;
+
+      const { name, type, category, amount, date } = action.payload;
+      state.push({ id: newId, name, type, category, amount, date });
         },
         updateTransaction: (state, action) => {
             const { id, name, type, category, amount, date } = action.payload;

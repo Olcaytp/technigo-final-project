@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { Pagination } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
-import { deleteTransaction } from '../reducer/TransactionReducer';
+import { deleteTransaction } from '../../reducer/TransactionReducer';
 
 const Transaction = ({ transactions, selectedFrequency, selectedType }) => {
   const [itemsPerPage] = useState(5);
@@ -64,8 +64,13 @@ const Transaction = ({ transactions, selectedFrequency, selectedType }) => {
     }
   };
 
+  // Sorting Actions
+  const sortedTransactions = [...transactions];
+  sortedTransactions.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+
   // Filtering Actions
-  const filteredTransactions = transactions.filter((transaction) => {
+  const filteredTransactions = sortedTransactions.filter((transaction) => {
     if (
       selectedFrequency &&
       !isDateInSelectedFrequency(transaction.date, selectedFrequency)

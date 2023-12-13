@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { Doughnut } from 'react-chartjs-2';
 import "chart.js/auto";
 import Header from '../header/Header'
-import LinkButtons from '../buttons/LinkButtons';
+import Buttons from '../buttons/Buttons';
 import ProgressBar from './ProgressBar';
 
 export default function Analytics() {
@@ -102,7 +102,7 @@ const handleViewChange = (view) => {
   return (
     <div>
       <Header />
-      <LinkButtons onViewChange={handleViewChange}/>
+      <Buttons onViewChange={handleViewChange}/>
       {/*<Buttons />*/}
       <div className="container-fluid ">
         <h2 className="text-center">Analytic Graphics</h2>

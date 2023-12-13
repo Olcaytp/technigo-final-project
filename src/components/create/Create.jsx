@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addTransaction } from '../reducer/TransactionReducer';
+import { addTransaction } from '../../reducer/TransactionReducer';
 import { useNavigate } from 'react-router-dom';
 
 function CreateTransaction() {
@@ -29,7 +29,7 @@ function CreateTransaction() {
     };
 
     dispatch(addTransaction(newTransaction));
-    navigate('/');
+    navigate('/grid');
   };
 
   return (
@@ -96,7 +96,7 @@ function CreateTransaction() {
         <button className="btn btn-info" type="submit">
           Add
         </button>
-        <button type="button" className="btn btn-secondary ml-3" onClick={() => navigate('/')}>
+        <button type="button" className="btn btn-secondary ml-3" onClick={() => navigate('/grid')}>
         Back
       </button>
       </form>

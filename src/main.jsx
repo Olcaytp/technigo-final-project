@@ -6,7 +6,7 @@ import "bootstrap/dist/js/bootstrap.js";
 import './index.css'
 import { Provider } from 'react-redux'
 import { configureStore } from '@reduxjs/toolkit'
-import TransactionReducer from './components/reducer/TransactionReducer'
+import TransactionReducer from './reducer/TransactionReducer'
 
 const store = configureStore({
   reducer: {
