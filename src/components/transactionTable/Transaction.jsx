@@ -103,47 +103,48 @@ const Transaction = ({ transactions, selectedFrequency, selectedType }) => {
     <div className="container-fluid">
       <div className="col-xs-12 d-flex justify-content-center">
         <div className="table-responsive">
-          <table className="table table-hover">
-            <thead className="text-center">
-              <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Name</th>
-                <th scope="col">Type</th>
-                <th scope="col">Amount</th>
-                <th scope="col">Date</th>
-                <th scope="col">Category</th>
-                <th scope="col">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {currentItems.map((transaction, index) => (
-                <tr key={index} className="text-center">
-                  <td>{transaction.id}</td>
-                  <td>{transaction.name}</td>
-                  <td>{transaction.type}</td>
-                  <td>{transaction.amount}</td>
-                  <td>{transaction.date}</td>
-                  <td>{transaction.category}</td>
-                  <td>
-                    <Link
-                      to={`/edit/${transaction.id}`}
-                      className="btn btn-sm btn-primary"
-                    >
-                      {" "}
-                      <FontAwesomeIcon icon={faEdit} />
-                    </Link>
-                    <button
-                      onClick={() => handleDelete(transaction.id)}
-                      className="btn btn-sm btn-danger ml-2"
-                    >
-                      {" "}
-                      <FontAwesomeIcon icon={faTrashAlt} />
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <table className="table table-hover">
+        <thead className="text-center">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Date</th>
+            <th scope="col">Category</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {currentItems.map((transaction, index) => (
+            <tr key={index} className="text-center">
+              <td>{transaction.id}</td>
+              <td>{transaction.name}</td>
+              <td>{transaction.type}</td>
+              <td>{transaction.amount}</td>
+              <td>{transaction.date}</td>
+              <td>{transaction.category}</td>
+              <td>
+                <Link
+                  to={`/edit/${transaction.id}`}
+                  className="btn btn-sm btn-primary"
+                  aria-label={`Edit transaction with ID ${transaction.id}`}
+                >
+                  <FontAwesomeIcon icon={faEdit} />
+                </Link>
+                <button
+                  onClick={() => handleDelete(transaction.id)}
+                  className="btn btn-sm btn-danger ml-2"
+                  aria-label={`Delete transaction with ID ${transaction.id}`}
+                >
+                  <FontAwesomeIcon icon={faTrashAlt} />
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
         </div>
       </div>
       <div className="col-xs-12 d-flex justify-content-center">
@@ -155,6 +156,7 @@ const Transaction = ({ transactions, selectedFrequency, selectedType }) => {
               key={index}
               active={index + 1 === currentPage}
               onClick={() => paginate(index + 1)}
+              aria-label={`Go to page ${index + 1}`}
             >
               {index + 1}
             </Pagination.Item>
@@ -163,6 +165,7 @@ const Transaction = ({ transactions, selectedFrequency, selectedType }) => {
       </div>
     </div>
   );
+  
 };
 
 export default Transaction;

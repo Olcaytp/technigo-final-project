@@ -5,36 +5,36 @@ export default function Header() {
   return (
     <div className="container-fluid col-sm-12">
       <nav class="navbar navbar-expand-sm navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-          Expense Tracker
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-            <Link to="/" className="btn">
+      <a className="navbar-brand" href="#" aria-label="Expense Tracker Home">
+        Expense Tracker
+      </a>
+      <button
+        className="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle Navigation"
+      >
+        <span className="navbar-toggler-icon" aria-hidden="true"></span>
+      </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item active">
+              <Link to="/" className="btn" aria-label="Go to Home Page">
                 Home
               </Link>
             </li>
-            <li class="nav-item">
-              <Link to="/grid" className="btn">
+            <li className="nav-item">
+              <Link to="/grid" className="btn" aria-label="Go to Grid Page">
                 Grid
               </Link>
             </li>
-            <li class="nav-item">
-            <Link to="/analytics" className="btn">
+            <li className="nav-item">
+              <Link to="/analytics" className="btn" aria-label="Go to Analytics Page">
                 Analytics
-            </Link>
+              </Link>
             </li>
           </ul>
         </div>

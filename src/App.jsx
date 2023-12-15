@@ -8,10 +8,6 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Update from './components/update/Update'
 import HomePage from './components/homepage/HomePage'
 
-const NotFoundPage = () => {
-  return <Navigate to="/" />;
-};
-
 function App() {
   const [isBackgroundEnabled, setBackgroundEnabled] = useState(false);
 
@@ -22,18 +18,19 @@ function App() {
   return (
     <BrowserRouter>
     <div className={`container-fluid text-center ${isBackgroundEnabled ? 'background-enabled' : ''}`}>
-        <div className="custom-switch form-check form-switch">
-          <input
-            className="form-check-input"
-            type="checkbox"
-            id="flexSwitchCheckDefault"
-            checked={isBackgroundEnabled}
-            onChange={toggleBackground}
-          />
-          <label className="form-check-label" htmlFor="flexSwitchCheckDefault">
-            Switch Background
-          </label>
-        </div>
+    <div className="custom-switch form-check form-switch">
+      <input
+        className="form-check-input"
+        type="checkbox"
+        id="flexSwitchCheckDefault"
+        checked={isBackgroundEnabled}
+        onChange={toggleBackground}
+        aria-labelledby="backgroundSwitchLabel"
+      />
+      <label id="backgroundSwitchLabel" className="form-check-label" htmlFor="flexSwitchCheckDefault">
+        Switch Background Button
+      </label>
+    </div>
       <Routes>
         <Route path="/" element={<HomePage/>}></Route>
         <Route path="/grid" element={<Home/>}></Route>

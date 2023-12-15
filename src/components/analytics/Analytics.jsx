@@ -80,6 +80,7 @@ const chartDataIncome = {
       data: [totalIncomeCount, totalTransactions - totalIncomeCount],
       backgroundColor: ['#36A2EB', '#FF6384'],
       hoverBackgroundColor: ['#36A2EB', '#FF6384'],
+      label: 'Transaction Type',
     },
   ],
 };
@@ -91,6 +92,7 @@ const chartTurnover = {
       data: [totalIncome,totalExpense],
       backgroundColor: ['#36A2EB', '#FF6384'],
       hoverBackgroundColor: ['#36A2EB', '#FF6384'],
+      label: 'Transaction Type',
     },
   ],
 };
@@ -109,12 +111,26 @@ const handleViewChange = (view) => {
         <div className="row graph">
           <div className="col-xs-12">
             <div className="analyticdiv ">
-              <div className="card mb-3 d-flex flex-column justify-content-center">
+              <div
+                className="card mb-3 d-flex flex-column justify-content-center"
+                style={{ backgroundColor: '#333', color: 'white' }}
+                role="figure"
+                id="transactionsChart"
+                aria-label="Transactions Chart"
+              >
                 <div className="chart-container ">
-                  <h5 className="chart-title text-center">
+                  <h3 className="chart-title text-center">
                     Transactions Chart
-                  </h5>
-                  <Doughnut data={chartDataIncome} />
+                  </h3>
+                  <Doughnut
+                    data={chartDataIncome}
+                    options={{
+                      plugins: { legend: { labels: { color: 'white' } } }
+                    }}
+                    role="figure"
+                    id="transactionsChart"
+                    aria-label="Transactions Chart Data"
+                  />
                 </div>
                 <div className="card-body text-center">
                   {/* Total Transactions counts*/}
@@ -130,10 +146,24 @@ const handleViewChange = (view) => {
           </div>
           <div className="col-xs-12">
             <div className="analyticdiv">
-              <div className="card">
+              <div
+                className="card"
+                style={{ backgroundColor: '#333', color: 'white' }}
+                role="figure"
+                id="totalTurnoverChart"
+                aria-label="Total Turnover Chart"
+              >
                 <div className="chart-container">
-                  <h5 className="chart-title text-center">Total Turnover </h5>
-                  <Doughnut data={chartTurnover} />
+                  <h3 className="chart-title text-center">Total Turnover </h3>
+                  <Doughnut
+                    data={chartTurnover}
+                    options={{
+                      plugins: { legend: { labels: { color: 'white' } } }
+                    }}
+                    role="figure"
+                    id="transactionsChart"
+                    aria-label="Total Turnover Chart Data"
+                  />
                 </div>
                 <div className="card-body mt-3 text-center">
                   {/* Total Transactions Amount*/}
@@ -152,18 +182,16 @@ const handleViewChange = (view) => {
         <div className="row graph">
           <div className="col-xs-12">
             <div className="analyticdiv ">
-            <div class="card" style={{width: '18rem'}}>
+            <div class="card" style={{width: '18rem', backgroundColor: '#333', color:'white'}}>
                 <div class="card-body">
-                  <h5 class="card-title">Expense Categories</h5>
+                  <h3 class="card-title">Expense Categories</h3>
                   <p class="card-text">
                   {Object.entries(expenseByCategory).map(
                     ([category, categoryTotal]) => (
-                      <div key={category} className="mb-3">
-                        <p className="mb-1">{category}</p>
-                        <ProgressBar
-                          value={(categoryTotal / totalIncome) * 100}
-                        />
-                      </div>
+                      <div key={category} className="mb-3" id="labeldiv">
+                      <p className="mb-1">{category}</p>
+                      <ProgressBar value={(categoryTotal / totalIncome) * 100} label="labeldiv" />
+                    </div>
                     )
                   )}
                   </p>
@@ -173,9 +201,9 @@ const handleViewChange = (view) => {
           </div>
           <div className="col-xs-12">
             <div className="analyticdiv">
-              <div class="card" style={{width: '18rem'}}>
+              <div class="card" style={{width: '18rem', backgroundColor: '#333', color:'white'}}>
                 <div class="card-body">
-                  <h5 class="card-title">Income Categories</h5>
+                  <h3 class="card-title">Income Categories</h3>
                   <p class="card-text">
                   {Object.entries(incomeByCategory).map(
                     ([category, categoryTotal]) => (

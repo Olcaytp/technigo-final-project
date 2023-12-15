@@ -5,44 +5,45 @@ import { Link, NavLink } from 'react-router-dom';
 export default function Buttons({ onFrequencyChange, onTypeChange, onResetFilters, onViewChange }) {
 
   return (
-    <div class="parentdiv container-fluid">
-      <div class="row d-flex justify-content-center">
-        <div class="col-xs-4">
-          <div class="dropdown">
+    <div className="parentdiv container-fluid">
+      <div className="row d-flex justify-content-center">
+        <div className="col-xs-4">
+          <div className="dropdown">
             <button
-              class="btn btn-secondary dropdown-toggle"
+              className="btn btn-secondary dropdown-toggle"
               type="button"
-              id="dropdownMenuButton"
+              id="dropdownFrequencyButton"
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
+              aria-labelledby="labeldivFrequency"
             >
               Select Frequency
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a
-                class="dropdown-item"
+                className="dropdown-item"
                 href="#"
                 onClick={() => onFrequencyChange("Last Week")}
               >
                 Last Week
               </a>
               <a
-                class="dropdown-item"
+                className="dropdown-item"
                 href="#"
                 onClick={() => onFrequencyChange("Last Month")}
               >
                 Last Month
               </a>
               <a
-                class="dropdown-item"
+                className="dropdown-item"
                 href="#"
                 onClick={() => onFrequencyChange("Last Year")}
               >
                 Last Year
               </a>
               <a
-                class="dropdown-item"
+                className="dropdown-item"
                 href="#"
                 onClick={() => onFrequencyChange("Custom Range")}
               >
@@ -51,43 +52,47 @@ export default function Buttons({ onFrequencyChange, onTypeChange, onResetFilter
             </div>
           </div>
         </div>
-
-        <div class="type col-xs-4 ml-3">
-          <div class="dropdown">
+  
+        <div className="type col-xs-4 ml-3">
+          <div className="dropdown">
             <button
-              class="btn btn-secondary dropdown-toggle"
+              className="btn btn-secondary dropdown-toggle"
               type="button"
-              id="dropdownMenuButton"
+              id="dropdownTypeButton"
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
+              aria-label="Select Type"
             >
               Select Type
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <div className="dropdown-menu" aria-labelledby="dropdownTypeButton">
               <a
-                class="dropdown-item"
+                className="dropdown-item"
                 href="#"
                 onClick={() => onTypeChange("income")}
+                aria-label="Select Income Type"
               >
                 Income
               </a>
               <a
-                class="dropdown-item"
+                className="dropdown-item"
                 href="#"
                 onClick={() => onTypeChange("expense")}
+                aria-label="Select Expense Type"
               >
-                Expence
+                Expense
               </a>
             </div>
           </div>
         </div>
-
-        <div class="col-xs-4 ml-3">
+  
+        <div className="col-xs-4 ml-3">
           <button
             type="button"
-            class=" resetfilter btn btn-outline-primary"
+            className="resetfilter btn btn-outline-primary"
             onClick={onResetFilters}
+            aria-label="Reset Filters"
           >
             Reset Filters
           </button>
@@ -100,6 +105,7 @@ export default function Buttons({ onFrequencyChange, onTypeChange, onResetFilter
             className="btn btn-outline-primary"
             activeclassname="active"
             onClick={() => onViewChange('table')}
+            aria-label="View as Grid"
           >
             Grid
           </NavLink>
@@ -110,16 +116,22 @@ export default function Buttons({ onFrequencyChange, onTypeChange, onResetFilter
             className="btn btn-outline-primary"
             activeclassname="active"
             onClick={() => onViewChange('analytics')}
+            aria-label="View Analytics"
           >
             Analytics
           </NavLink>
         </div>
         <div className="transbut col-xs-4 ml-3">
-          <Link to="/create" className="btn btn-success">
+          <Link
+            to="/create"
+            className="btn btn-success"
+            aria-label="Add Transaction"
+          >
             Add Transaction
           </Link>
         </div>
       </div>
     </div>
   );
+  
 }

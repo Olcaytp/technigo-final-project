@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Line, Bar } from 'react-chartjs-2';
 import Header from '../header/Header'
+import Buttons from '../buttons/Buttons';
 
 const HomePage = () => {
   const dummyChartData1 = {
@@ -13,6 +14,7 @@ const HomePage = () => {
         backgroundColor: 'rgba(255, 99, 132, 0.2)',
       },
     ],
+    chartLabel: 'Example Chart 1',
   };
   
   const options = {
@@ -48,6 +50,7 @@ const HomePage = () => {
         data: [28, 48, 40, 19, 86],
       },
     ],
+    chartLabel: 'Example Chart 2',
   };
 
   const dummyChartData3 = {
@@ -75,13 +78,15 @@ const HomePage = () => {
         borderWidth: 1,
       },
     ],
+    chartLabel: 'Example Chart 3',
   };
 
   return (
     <div className="container-fluid ">
       <Header />
+      <Buttons />
       <div className='mt-5' style={{backgroundColor:'white', opacity:'0.7'}}>
-      <h1 className="text-center">Welcome to My Finance App</h1>
+      <h3 className="text-center">Welcome to My Finance App</h3>
       <p className="text-center font-weight-bold">
         Track and manage your expenses and income easily.
       </p>
@@ -91,9 +96,14 @@ const HomePage = () => {
           <div className="analyticdiv ">
             <div class="card ml-3 d-flex flex-column justify-content-center" style={{backgroundColor:'white', opacity:'0.7'}}>
               <div class="card-body">
-                <h5 class="card-title">Line Chart</h5>
+                <h4 class="card-title">Line Chart</h4>
                 <p class="card-text">
-                  <Line data={dummyChartData1} options={options} />
+                  <Line 
+                  data={dummyChartData1} 
+                  options={options} 
+                  aria-label="Example1 Line Chart"
+                  />
+                  <div id="lineChartTitle" style={{ display: 'none' }}>Example Line Chart</div>
                 </p>
               </div>
             </div>
@@ -105,7 +115,8 @@ const HomePage = () => {
               <div class="card-body">
                 <h5 class="card-title">Income Categories</h5>
                 <p class="card-text">
-                  <Bar data={dummyChartData2} />
+                  <Bar data={dummyChartData2} aria-label="Example2 Line Chart"/>
+                  <div id="barChartTitle" style={{ display: 'none' }}>Example Bar Chart</div>
                 </p>
               </div>
             </div>
@@ -117,7 +128,8 @@ const HomePage = () => {
               <div class="card-body">
                 <h5 class="card-title">Expense Categories</h5>
                 <p class="card-text">
-                  <Bar data={dummyChartData3} />
+                  <Bar data={dummyChartData3} aria-label="Example3 Line Chart"/>
+                  <div id="barChartTitle" style={{ display: 'none' }}>Example Bar Chart</div>
                 </p>
               </div>
             </div>
