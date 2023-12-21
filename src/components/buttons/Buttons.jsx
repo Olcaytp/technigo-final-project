@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom';
+import '../../App.css'
 
 
 export default function Buttons({ onFrequencyChange, onTypeChange, onResetFilters, onViewChange }) {
@@ -87,10 +88,10 @@ export default function Buttons({ onFrequencyChange, onTypeChange, onResetFilter
           </div>
         </div>
   
-        <div className="col-xs-4 ml-3">
+        <div className="col-xs-4 ml-3 ">
           <button
             type="button"
-            className="resetfilter btn btn-outline-primary"
+            className="resetfilter btn btn-secondary"
             onClick={onResetFilters}
             aria-label="Reset Filters"
           >
@@ -102,7 +103,7 @@ export default function Buttons({ onFrequencyChange, onTypeChange, onResetFilter
         <div className="col-xs-4">
           <NavLink
             to="/grid"
-            className="btn btn-outline-primary"
+            className="btn btn-secondary"
             activeclassname="active"
             onClick={() => onViewChange('table')}
             aria-label="View as Grid"
@@ -113,7 +114,7 @@ export default function Buttons({ onFrequencyChange, onTypeChange, onResetFilter
         <div className="col-xs-4 ml-3">
           <NavLink
             to="/analytics"
-            className="btn btn-outline-primary"
+            className="btn btn-secondary"
             activeclassname="active"
             onClick={() => onViewChange('analytics')}
             aria-label="View Analytics"
@@ -124,7 +125,7 @@ export default function Buttons({ onFrequencyChange, onTypeChange, onResetFilter
         <div className="transbut col-xs-4 ml-3">
           <Link
             to="/create"
-            className="btn btn-success"
+            className="btn btn-secondary"
             aria-label="Add Transaction"
           >
             Add Transaction

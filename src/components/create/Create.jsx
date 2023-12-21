@@ -126,7 +126,7 @@ function CreateTransaction() {
       <br />
       <button
         id="addTransactionButton"
-        className="btn btn-info"
+        className="btn btn-secondary"
         type="submit"
         aria-label="Add Transaction"
         title="Add Transaction"

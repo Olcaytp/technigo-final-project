@@ -154,7 +154,6 @@ const Transaction = ({ transactions, selectedFrequency, selectedType }) => {
           ].map((_, index) => (
             <Pagination.Item
               key={index}
-              active={index + 1 === currentPage}
               onClick={() => paginate(index + 1)}
               aria-label={`Go to page ${index + 1}`}
             >

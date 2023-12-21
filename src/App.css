@@ -78,3 +78,7 @@
   width: 300px; /* İstediğiniz genişliği ayarlayın */
   height: 300px; /* İstediğiniz yüksekliği ayarlayın */
 }
+
+.resetfilter {
+  background-color: antiquewhite;
+}
